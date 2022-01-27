@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 import {HomeOutlined,MoneyCollectOutlined,BulbOutlined,FundOutlined,MenuOutlined, MenuUnfoldOutlined} from "@ant-design/icons"
 import icon from "../images/crypto.png"
 export default function Navbar() {
-  return <div className="nav-container">
+  return ( <div className="nav-container">
       <div className="logo-container">
       <Avatar src={icon }  size="large"/>
           <Typography.Title   level={2} className="logo">
@@ -30,4 +30,5 @@ export default function Navbar() {
       </div>
 
   </div>
+  )
 }

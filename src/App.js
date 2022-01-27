@@ -1,10 +1,10 @@
-import {Switch,Link,Route} from  'react-router-dom';
+import {Switch,Link,Route,Routes} from  'react-router-dom';
 import {Layout,Space,Typography} from  "antd"
-import {Navbar} from './components';
+import {Navbar,Exchanges,Cryptocurrencies,CryptoDetails,News,HomePage} from './components';
 import "./App.css"
 function App() {
   return (
-    <div className="App">
+    <div className="app">
 
       <div className="navbar">
         <Navbar/>
@@ -13,13 +13,42 @@ function App() {
       <div className="main">
         <Layout>
           <div className="routes">
-
+            
+             <Switch>
+               <Route exact path="/">
+                 <HomePage/>
+               </Route>
+               <Route exact path="/exchanges">
+                 <Exchanges/>
+               </Route>
+               <Route exact path="/news">
+                 <News/>
+               </Route>
+               <Route exact path="/cryptocurrencies">
+                 <Cryptocurrencies/>
+               </Route>
+               <Route exact path="/crypto/:coinId">
+                 <CryptoDetails/>
+               </Route>
+             </Switch>
+            
           </div>
         </Layout>
+        <div className="footer" >
+        <Typography.Title level={5} style={{color:'white',textAlign:'center'}}>
+          Ug Crypto <br/>
+          All  rights reserved
+        </Typography.Title>
+        <Space>
+          <Link to="/">Home</Link>
+          <Link to="/exchanges">Exchanges</Link>
+          <Link to="/news">News</Link>
+          <Link to="/cryptocurrencies">Crytocurrencies</Link>
+        </Space>
+      </div>  
       </div>
 
-      <div className="footer">
-      </div>  
+
     </div>
   );
 }
