@@ -11,7 +11,7 @@ export default function Cryptocurrencies({ simplified}) {
      const [searchTerm, setSearchTerm] = useState('');
     const [cryptos, setCryptos] = useState([]);
    
-    // console.log(cryptos)
+    console.log(cryptos)
 
     useEffect(() => {
     //setCryptos(cryptosList?.data?.coins);
@@ -48,7 +48,7 @@ export default function Cryptocurrencies({ simplified}) {
             <Link key={currency.uuid} to={`/crypto/${currency.uuid}`}>
               <Card
                 title={`${currency.rank}. ${currency.name}`}
-                extra={<img className="crypto-image" src={currency.iconUrl} />}
+                extra={<img className="crypto-image" src={currency.iconUrl}  />}
                 hoverable
               >
                 <p>Price: {millify(currency.price)}</p>
