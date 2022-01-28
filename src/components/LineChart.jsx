@@ -17,7 +17,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
     coinTimestamp.push(new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString());
   }
   const data = {
-    labels: coinTimestamp,
+    labels: [coinTimestamp],
     datasets: [
       {
         label: 'Price In USD',
@@ -28,7 +28,21 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
       },
     ],
   };
-
+  // const state = {
+  //   labels: ['January', 'February', 'March',
+  //            'April', 'May'],
+  //   datasets: [
+  //     {
+  //       label: 'Rainfall',
+  //       fill: false,
+  //       lineTension: 0.5,
+  //       backgroundColor: 'rgba(75,192,192,1)',
+  //       borderColor: 'rgba(0,0,0,1)',
+  //       borderWidth: 2,
+  //       data: [65, 59, 80, 81, 56]
+  //     }
+  //   ]
+  // }
   const options = {
     scales: {
       yAxes: [
@@ -50,7 +64,17 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
           <Title level={5} className="current-price">Current {coinName} Price: $ {currentPrice}</Title>
         </Col>
       </Row>
-        <Line/>  
+      {/* <Line data={data}        options={{
+            title:{
+              display:true,
+              text:'Average Rainfall per month',
+              fontSize:20
+            },
+            legend:{
+              display:true,
+              position:'right'
+            }
+          }} /> */}
     </>
   );
 };
