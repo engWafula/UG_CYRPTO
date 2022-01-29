@@ -17,9 +17,9 @@ const App = () => (
             <Route exact path="/">
               <HomePage />
             </Route>
-            <Route exact path="/exchanges">
+            {/* <Route exact path="/exchanges">
               <Exchanges />
-            </Route>
+            </Route> */}
             <Route exact path="/cryptocurrencies">
               <Cryptocurrencies />
             </Route>
@@ -36,8 +36,11 @@ const App = () => (
         <Typography.Title level={5} style={{ color: 'white', textAlign: 'center' }}>Copyright © 2022
           <Link to="/">
            Ug Crypto Inc.
-          </Link> <br />
+          </Link> 
+          <br />
           All Rights Reserved.
+          <br />
+          Designed by  Wafula Allan  Isaac
         </Typography.Title>
         <Space>
           <Link to="/">Home</Link>

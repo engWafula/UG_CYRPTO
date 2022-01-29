@@ -5,13 +5,15 @@ import {Link } from "react-router-dom"
 import { useGetCryptosQuery } from '../services/CryptoApi';
 import Cryptocurrencies from './Cryptocurrencies';
 import News from './News';
+import Loader from './Loader';
+
 //i destructure the Typography component in antd  to  get  The Title property
 const {Title} =Typography
 
 export default function HomePage() {
     const {data,isFetching} = useGetCryptosQuery(10);
     const globalStats =data?.data?.stats
-    if(isFetching) return "Loading........."
+    if(isFetching) return <Loader/>
     // console.log(data)
     return (
     <>
