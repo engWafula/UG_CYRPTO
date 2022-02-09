@@ -29,6 +29,9 @@ const App = () => (
             <Route exact path="/news">
               <News />
             </Route>
+            <Route exact path="/exchanges">
+              <Exchanges />
+            </Route>
           </Switch>
         </div>
       </Layout>
