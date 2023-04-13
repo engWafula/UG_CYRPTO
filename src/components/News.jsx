@@ -14,7 +14,7 @@ export default function News({simplified}) {
     const[newsCategory,setNewsCategory]=useState('Cryptocurrency')
     const {data:cryptoNews}=useGetCryptoNewsQuery({newsCategory,count:simplified?6:100});
    
-    //console.log(cryptoNews);
+   console.log(cryptoNews.value);
 
     if (!cryptoNews?.value) return <Loader/>
   return(
